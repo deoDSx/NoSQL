@@ -359,4 +359,21 @@ test> use students
 switched to db students
 students> show collections
 test_collection
+students> db.getCollection('test_collection').find({ $and: [{ age: { $gte: 24 } }, { 'grade': "B"} ]})
+[
+  {
+    _id: ObjectId("652920550671f21914043799"),
+    name: 'Boris',
+    age: 29,
+    gender: 'male',
+    grade: 'B'
+  },
+  {
+    _id: ObjectId("652920550671f2191404379c"),
+    name: 'Vadim',
+    age: 31,
+    gender: 'male',
+    grade: 'B'
+  }
+]
 ```
